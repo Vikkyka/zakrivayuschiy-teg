@@ -17,4 +17,219 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-main), Arial, Helvetica, sans-serif;
+  font-variation-settings: 'wght' var(--weight-text);
+  background-color: var(--bg-color, white);
+  color: var(--accent-color, black);
+  background-image: var(--bg-image);
+  background-repeat: repeat; /* Паттерн повторяется по двум осям */
+  background-attachment: fixed; /* Фон фиксирован, скроллится со всей страницей */
+  background-size: 4px 4px; /* Размер паттерна 4 пикселя */
+
+  display: grid;
+  align-content: space-evenly;
+  grid-template-rows: /*repeat(3, 1fr)*/1fr 2fr 0.3fr;
+  align-items: center;
+  justify-items: center;
+}
+
+button {
+  background-color: var(--bg-color, white);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.header {
+  border: 2px solid currentColor;
+  background-color: var(--bg-color, white);
+  font-family: var(--font-accent), Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%; /* Временно */
+}
+
+.header__title {
+  font-size: 65px; /* clamp */
+  line-height: 65px;/* clamp */ 
+  margin-bottom: 20px;
+}
+
+.header__text {
+  font-size: 23px;/* clamp */
+  line-height: 23px;/* clamp */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.header__theme-menu {
+  margin-bottom: 25px;
+}
+
+.theme-menu__item {
+  position: relative;
+}
+
+.theme-menu__item:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.theme-menu__item:has(.theme-menu__button:disabled)::before {
+  content: '▶';
+  position: absolute; /* Абсолютное позиционирование */
+  left: -20px; /* Позиционируем элемент слева от кнопки */
+ /* top: 50%;  Центрируем по вертикали */
+  transform: translateY(-50%);
+  opacity: 0.6;
+  animation: arrow 0.8s infinite ease-in-out;
+}
+
+@keyframes arrow {
+  0%, 100% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(4px);
+  }
+}
+
+.theme-menu__button {
+  /* width: 70px;
+  height: 14px; */
+  transition: opacity 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0); 
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:hover { 
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  opacity: 0.6;
+  outline: none;
+}
+
+.theme-menu__button:focus-visible::before {
+  transform: scale(1); 
+}
+
+.content {
+  border: 2px solid currentColor;
+  background-color: var(--bg-color, white);
+  width: 50%; /* Временно */
+  position: relative;
+}
+
+.content-tytle {
+  font-weight: var(--weight-title, 700);
+  font-size: 18px;
+}
+
+.picture {
+  width: 100%;
+}
+
+.content-text {
+  margin: 25px 25px 88px 25px;
+}
+
+.content-paragraf:not(:last-child) {
+  margin-bottom: 27px;
+}
+
+.card__button {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.card__icon-button {
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+}
+
+.button__text {
+  line-height: 12.6px;
+  font-family: var(--font-accent), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.button-save-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.button__border {
+  border: 2px solid var(--accent-color);
+  transition: box-shadow 0.3s ease;
+  transition: color 1s ease;
+  position: relative;
+}
+
+.button__border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: var(--accent-color);
+  transform: scaleX(0); 
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button__border:hover::before {
+  transform: scaleX(1); 
+}
+
+.button__border:hover {
+  color: var(--bg-color);
+}
+
+.button__border:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 currentColor;
+}
+
+.button-save {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button-save-icon {
+  inline-size: 21px;
 }
