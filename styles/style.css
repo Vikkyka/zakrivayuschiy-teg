@@ -55,7 +55,7 @@ button {
 
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem); 
+  line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-bottom: 20px;
   margin-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   margin-left: clamp(0.875rem, -1.4577rem + 9.9531vw, 7.5rem);
@@ -113,12 +113,12 @@ button {
   right: 0;
   height: 2px;
   background: currentColor;
-  transform: scaleX(0); 
+  transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
 
-.theme-menu__button:hover { 
+.theme-menu__button:hover {
   opacity: 0.6;
 }
 
@@ -128,7 +128,7 @@ button {
 }
 
 .theme-menu__button:focus-visible::before {
-  transform: scale(1); 
+  transform: scale(1);
 }
 
 .content {
@@ -208,8 +208,7 @@ button {
 
 .button__border {
   border: 2px solid var(--accent-color);
-  transition: box-shadow 0.3s ease;
-  transition: color 1s ease;
+  transition: box-shadow 0.3s ease, color 1s ease;
   position: relative;
 }
 
@@ -222,13 +221,13 @@ button {
   bottom: 0;
   height: 100%;
   background: var(--accent-color);
-  transform: scaleX(0); 
+  transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
 }
 
 .button__border:hover::before {
-  transform: scaleX(1); 
+  transform: scaleX(1);
 }
 
 .button__border:hover {
@@ -259,10 +258,10 @@ button {
 
 @media (width <= 375px) {
   .header {
-    width: calc(100% + 5%); 
+    width: calc(100% + 5%);
   }
   .content {
-    width: calc(100% + 5%); 
+    width: calc(100% + 5%);
   }
   .button-save-icon {
     inline-size: 28px;
