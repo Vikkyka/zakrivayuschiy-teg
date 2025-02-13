@@ -22,14 +22,9 @@
   background-color: var(--bg-color, white);
   color: var(--accent-color, black);
   background-image: var(--bg-image);
-  background-repeat: repeat; /* Паттерн повторяется по двум осям */
-  background-attachment: fixed; /* Фон фиксирован, скроллится со всей страницей */
-  background-size: 4px 4px; /* Размер паттерна 4 пикселя */
-
-  /* display: grid;
-  align-content: space-evenly;
-  grid-template-rows: 1fr 2fr 0.3fr;
-  align-items: center; */
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 4px 4px;
   justify-items: center;
 }
 
@@ -64,13 +59,17 @@ button {
 
 .header__text {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  line-height: 23px;/* clamp */
+  line-height: 23px;
   margin-bottom: 25px;
   text-transform: uppercase;
 }
 
 .header__theme-menu {
   margin-bottom: 25px;
+}
+
+.theme-menu__list {
+  margin-inline-start: 16px;
 }
 
 .theme-menu__item {
@@ -83,9 +82,8 @@ button {
 
 .theme-menu__item:has(.theme-menu__button:disabled)::before {
   content: '▶';
-  position: absolute; /* Абсолютное позиционирование */
-  left: -20px; /* Позиционируем элемент слева от кнопки */
- /* top: 50%;  Центрируем по вертикали */
+  position: absolute;
+  left: -20px;
   transform: translateY(-50%);
   opacity: 0.6;
   animation: arrow 0.8s infinite ease-in-out;
@@ -172,7 +170,6 @@ button {
   right: 25px;
   bottom: 25px;
   display: flex;
-  /* gap: 12px; */
 }
 
 .card__icon-button {
@@ -203,7 +200,6 @@ button {
   position: relative;
   z-index: 1;
   inline-size: 21px;
-  /* margin: 19px auto 19px 15px; */
 }
 
 .button__border {
@@ -248,9 +244,6 @@ button {
 }
 
 .button-save {
-  /* display: flex;
-  justify-content: center;
-  gap: 8px; */
   margin-right: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem);
   margin-left: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem);
   margin-bottom: 100px;
