@@ -11,6 +11,9 @@
     --weight-title: 785;
     --weight-text: 465;
     --bg-image: url(../svg/pattern-dark.svg);
+    --contour-heart: #00CC14;
+    --sparks-heart: #FF0000;
+    --main-body-heart: #FF0000;
 }
 
 .page.theme-light {
@@ -19,14 +22,10 @@
     --weight-title: 700;
     --weight-text: 400;
     --bg-image: url(../svg/pattern-light.svg);
+    --contour-heart: #000000;
+    --sparks-heart: #FF0000;
+    --main-body-heart: #FF0000;
 }
-
-/* :root.theme-light {
-    --bg-color: #FFFFFF; /* Светлая тема 
-    --accent-color: #000000; /* Цвет акцентов светлой темы 
-    --weight-title: 700;
-    --weight-text: 400;
-} */
 
 @media (prefers-color-scheme: dark) {
     .page {
@@ -35,6 +34,9 @@
         --weight-title: 785;
         --weight-text: 465;
         --bg-image: url(../svg/pattern-dark.svg);
+        --contour-heart: #00CC14;
+        --sparks-heart: #FF0000;
+        --main-body-heart: #FF0000;
     }
 }
 

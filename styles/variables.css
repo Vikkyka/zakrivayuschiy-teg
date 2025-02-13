@@ -7,5 +7,8 @@
     --bg-color: #FFFFFF;
     --accent-color: #000000;
     --bg-image: url(../svg/pattern-light.svg);
+    --contour-heart: #000000;
+    --sparks-heart: #FF0000;
+    --main-body-heart: #FF0000;
 }
 

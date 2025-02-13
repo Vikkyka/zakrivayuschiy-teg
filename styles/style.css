@@ -91,15 +91,6 @@ button {
   animation: arrow 0.8s infinite ease-in-out;
 }
 
-@keyframes arrow {
-  0%, 100% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(4px);
-  }
-}
-
 .theme-menu__button {
   font-size: 14px;
   line-height: 14px;
@@ -150,7 +141,7 @@ button {
 }
 
 .content-tytle {
-  font-weight: var(--weight-title, 700);
+  font-variation-settings: 'wght' var(--weight-title, 700);
   font-size: 18px;
   margin-top: 3px;
   margin-bottom: 8px;
@@ -211,6 +202,8 @@ button {
 .button-save-icon {
   position: relative;
   z-index: 1;
+  inline-size: 21px;
+  /* margin: 19px auto 19px 15px; */
 }
 
 .button__border {
@@ -261,8 +254,21 @@ button {
   gap: 8px; */
   margin-right: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem);
   margin-left: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem);
+  margin-bottom: 100px;
 }
 
-.button-save-icon {
-  inline-size: 21px;
+@media (width <= 375px) {
+  .header {
+    width: calc(100% + 5%); 
+  }
+  .content {
+    width: calc(100% + 5%); 
+  }
+  .button-save-icon {
+    inline-size: 28px;
+  }
+  .button-save-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
